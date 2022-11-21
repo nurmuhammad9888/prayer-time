@@ -11,10 +11,10 @@
 }
 
 body{
-    height: 100vh;
+    height: auto;
     background-image: url("../mosique.jpg");
-    background-size: cover;
     background-repeat: no-repeat;
+    background-position: top;
 }.tebl-wrap{
     background-color: #ccbebed8;
 }
