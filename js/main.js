@@ -4,6 +4,7 @@ const frag = document.createDocumentFragment();
 const elList = document.querySelector(".list");
 const elListTebl = document.querySelector(".tebl-list");
 const elListTeblWrap = document.querySelector(".tebl-wrap");
+const elbg = document.querySelector(".bg-juma");
 
 const elPrayerTitle = document.querySelector(".title-region");
 const elPrayerTime = document.querySelector(".time-date");
@@ -13,7 +14,7 @@ const elPrayerWeekday = document.querySelector(".weekday");
 const elBtnWeek = document.querySelectorAll(".btn-prayer");
 const elBtnCity = document.querySelectorAll(".btn-city");
 
-let region = "Toshkent";
+let region = "Qarshi";
 let con = "day";
 
 //  NEW  DATA
@@ -24,6 +25,10 @@ let day = days[newdata.getDay() ];
 let data = newdata.getDate();
 let moth = moths[newdata.getMonth()];
 let year = newdata.getFullYear();
+
+let mon = newdata.getMonth()
+let presentTime = `${data}.${mon + 1}.${year}`
+let monthTime = `${year}-${mon + 1}-${data}`
 
 elBtnWeek.forEach(item =>{
     item.addEventListener("click", ()=>{
@@ -98,13 +103,26 @@ async function mainFuncWeekMonth(url) {
     }
 }
 
+
 function renderFuncWeek(arr) {
     elList.innerHTML = "";
     elListTebl.innerHTML = "";
     elPrayerTitle.textContent = region;
     arr.forEach(el => {
         const tempClone = templatePrayerTebl.cloneNode(true);
-        tempClone.querySelector(".week-time-text").textContent = el.date.slice(0, 10);
+        let dat =  tempClone.querySelector(".week-time-text").textContent = el.date.slice(0, 10).split("/").join(".");
+        tempClone.querySelector(".week-t-text").textContent = el.weekday;
+        
+        if(el.weekday == "Juma"){
+            tempClone.querySelector(".table-tr").style.backgroundColor = "#14dd2f";
+            tempClone.querySelector(".table-tr").style.color = "#fff";
+        }
+        if(dat == presentTime){
+            tempClone.querySelector(".table-tr").style.backgroundColor = "#bcdfe3";
+        }
+        if(dat == monthTime){
+            tempClone.querySelector(".table-tr").style.backgroundColor = "#bcdfe3";
+        }
         tempClone.querySelector(".time-prayer-morning").textContent = el.times.tong_saharlik;
         tempClone.querySelector(".time-prayer-sunrise").textContent = el.times.quyosh;
         tempClone.querySelector(".time-prayer-noon").textContent = el.times.peshin;

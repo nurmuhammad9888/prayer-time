@@ -11,11 +11,16 @@
 </head>
 <body>
     <section class="hero">
-        <div class="container px-3">
+        <div class="container px-3 px-md-0">
             <div class="title-wrap my-5">
-                <h3 class="title-region text-center"></h3>
-                <time class="time-date d-block text-center"></time>
-                <p class="weekday text-center"></p>
+                <div class="title-content-wrap rounded p-3">
+                    <h3 class="title-region text-center fw-semibold"></h3>
+                    <div class="d-flex align-items-center justify-content-center border p-2">
+                        <time class="time-date d-block text-center"></time>
+                        <p class="weekday text-center ms-3 mb-0"></p>
+                    </div>
+                </div>
+                
                 <div class="d-flex justify-content-between">
                     <div class="btn-wrapp">
                         <button class="btn ms-md-2 mt-3 btn-prayer" data-id="day" type="button">Kunlik</button>
@@ -27,37 +32,38 @@
                             Viloyatlar
                         </button>
                         <ul class="dropdown-menu">
-                            <li><button type="button" data-id="Toshkent" class="dropdown-item btn-city">Toshkent</button></li>
                             <li><button type="button" data-id="Qarshi" class="dropdown-item btn-city">Qashqadaryo</button></li>
+                            <li><button type="button" data-id="Toshkent" class="dropdown-item btn-city">Toshkent</button></li>
                             <li><button type="button" data-id="Samarqand" class="dropdown-item btn-city">Samarqand</button></li>
                             <li><button type="button" data-id="Buxoro" class="dropdown-item btn-city">Buxoro</button></li>
-                            <li><button type="button" data-id="Nukus" class="dropdown-item btn-city">Nukus</button></li>
                             <li><button type="button" data-id="Jizzax" class="dropdown-item btn-city">Jizzax</button></li>
-                            <li><button type="button" data-id="Xiva" class="dropdown-item btn-city">Xorazim</button></li>
+                            <li><button type="button" data-id="Guliston" class="dropdown-item btn-city">Sirdaryo</button></li>               
                             <li><button type="button" data-id="Termiz" class="dropdown-item btn-city">Surxandaryo</button></li>
+                            <li><button type="button" data-id="Navoiy" class="dropdown-item btn-city">Navoiy</button></li>               
+                            <li><button type="button" data-id="Xiva" class="dropdown-item btn-city">Xorazim</button></li>
                             <li><button type="button" data-id="Andijon" class="dropdown-item btn-city">Andijon</button></li>
                             <li><button type="button" data-id="Namangan" class="dropdown-item btn-city">Namangan</button></li>
                             <li><button type="button" data-id="Farg'ona" class="dropdown-item btn-city">Farg'ona</button></li>
-                            <!-- <li><button type="button" data-id="" class="dropdown-item"></button></li> -->               
+                            <li><button type="button" data-id="Nukus" class="dropdown-item btn-city">Nukus</button></li>
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div class="list text-center mb-5"> 
                 
             </div>
-            <div class="list text-center"> 
-                
-            </div>
-            <div class="tebl-wrap" style="display: none;">
-                <table class="table table-sm">
+            <div class="tebl-wrap rounded-4 mb-4" style="display: none;">
+                <table class="table table-sm mb-0 text-center">
                     <thead>
-                        <tr class="bg-warning">
-                            <th class="ps-2" scope="col">Kunlar</th>
-                            <th scope="col">Bomdod</th>
-                            <th scope="col">Quyosh</th>
-                            <th scope="col">Peshin</th>
-                            <th scope="col">Asr</th>
-                            <th scope="col">Shom</th>
-                            <th scope="col">Xufton</th>
+                        <tr class="bg-juma py-1 text-white" style="background-color: #7ed6df; height: 40px;">
+                            <th class="icon-calendar-th" scope="col"> </th>
+                            <th class="py-3" scope="col">Sana</th>
+                            <th class="py-3" scope="col">Bomdod</th>
+                            <th class="py-3" scope="col">Quyosh</th>
+                            <th class="py-3" scope="col">Peshin</th>
+                            <th class="py-3" scope="col">Asr</th>
+                            <th class="py-3" scope="col">Shom</th>
+                            <th class="py-3"scope="col">Xufton</th>
                         </tr>
                     </thead>
                     <tbody class="tebl-list">
@@ -71,53 +77,59 @@
         <div>
             <time class="week-time-text d-block text-center"></time>
         </div>
-        <div class="d-flex my-4 row">
+        <div class="d-flex row">
             <div class="item-morning col-12 mx-auto mt-3 item d-flex flex-column justify-content-center">
-                <p class="prayer-title fs-5">Bomdod</p>
-                <time class="time-prayer-morning">04:26</time>
+                <img src="./images/Fajr.png" width="100" height="100" alt="dhuhr">
+                <p class="prayer-title fw-semibold fs-5">Bomdod</p>
+                <time class="time-prayer-morning fs-3">04:26</time>
             </div>
             <div class="item-sunrise col-12 mx-auto mt-3 item d-flex flex-column justify-content-center">
-                <p class="prayer-title fs-5">Quyosh</p>
-                <time class="time-prayer-sunrise">04:26</time>
+                <img src="./images/Sunrise.png" width="100" height="100" alt="sunrise">
+                <p class="prayer-title fw-semibold fs-5">Quyosh</p>
+                <time class="time-prayer-sunrise fs-3">04:26</time>
             </div>
             <div class="item-noon item col-12 mx-auto mt-3 d-flex flex-column justify-content-center">
-                <p class="prayer-title fs-5">Peshin</p>
-                <time class="time-prayer-noon">04:26</time>
+                <img src="./images/Dhuhr.png" width="100" height="100" alt="dhuhr">
+                <p class="prayer-title fw-semibold fs-5">Peshin</p>
+                <time class="time-prayer-noon fs-3">04:26</time>
             </div>
             <div class="item-century col-12 mx-auto mt-3 item d-flex flex-column justify-content-center">
-                <p class="prayer-title fs-5">Asr</p>
-                <time class="time-prayer-century">04:26</time>
+                <img src="./images/asr.png" width="100" height="100" alt="asr">
+                <p class="prayer-title fw-semibold fs-5">Asr</p>
+                <time class="time-prayer-century fs-3">04:26</time>
             </div>
             <div class="item-evening col-12 mx-auto mt-3 item d-flex flex-column justify-content-center">
-                <p class="prayer-title fs-5">Shom</p>
-                <time class="time-prayer-evening">04:26</time>
+                <img src="./images/Maghrib.png" width="100" height="100" alt="maghrib">
+                <p class="prayer-title fw-semibold fs-5">Shom</p>
+                <time class="time-prayer-evening fs-3">04:26</time>
             </div>
             <div class="item-night item col-12 mx-auto mt-3 d-flex flex-column justify-content-center">
-                <p class="prayer-title fs-5">Xufton</p>
-                <time class="time-prayer-night">04:26</time>
+                <img src="./images/Isha.png" width="100" height="100" alt="isha">
+                <p class="prayer-title fw-semibold fs-5">Xufton</p>
+                <time class="time-prayer-night fs-3">04:26</time>
             </div>
         </div>
     </template>
     <template class="template-tebl">
-        <tr>
-            <!-- <th scope="col"> </th> -->
-            <th class="week-time-text ps-2" scope="row">14/11/2022</th>
-            <td>
+        <tr class="table-tr table-tr-wrap align-middle">
+            <th class="week-t-text week-rotaete py-3" scope="row">14/11/2022</th>
+            <th class="week-time-text py-3" scope="row">14/11/2022</th>
+            <td class="py-3">
                 <time class="time-prayer-morning">04:26</time>
             </td>
-            <td>
+            <td class="py-3">
                 <time class="time-prayer-sunrise">04:26</time>
             </td>
-            <td>
+            <td class="py-3">
                 <time class="time-prayer-noon">04:26</time>
             </td>
-            <td>
+            <td class="py-3">
                 <time class="time-prayer-century">04:26</time>
             </td>
-            <td>
+            <td class="py-3">
                 <time class="time-prayer-evening">04:26</time>
             </td>
-            <td>
+            <td class="py-3">
                 <time class="time-prayer-night">04:26</time>
             </td>
         </tr>
