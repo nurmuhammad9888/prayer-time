@@ -50,7 +50,7 @@ timeFunc()
 
 setInterval(() => {
     timeFunc()
-}, 60000);
+}, 10000);
 
 
 // elHeaderTime.textContent = newdata.toLocaleTimeString()
