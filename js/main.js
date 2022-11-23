@@ -5,6 +5,7 @@ const elList = document.querySelector(".list");
 const elListTebl = document.querySelector(".tebl-list");
 const elListTeblWrap = document.querySelector(".tebl-wrap");
 const elbg = document.querySelector(".bg-juma");
+const elHeaderTime = document.querySelector(".header-time");
 
 const elPrayerTitle = document.querySelector(".title-region");
 const elPrayerTime = document.querySelector(".time-date");
@@ -25,10 +26,35 @@ let day = days[newdata.getDay() ];
 let data = newdata.getDate();
 let moth = moths[newdata.getMonth()];
 let year = newdata.getFullYear();
-
 let mon = newdata.getMonth()
 let presentTime = `${data}.${mon + 1}.${year}`
 let monthTime = `${year}-${mon + 1}-${data}`
+
+
+function timeFunc() {
+    let mns = new Date();
+    let hours = mns.getHours();
+    let menut = mns.getMinutes();
+    if(hours < 10){
+        hours = "0" + hours 
+    }
+    if(menut < 10){
+        menut = "0" + menut 
+    }
+    let hourMinut = `${hours}:${menut}`
+    // console.log(hourMinut);
+    elHeaderTime.textContent = hourMinut;
+    
+}
+timeFunc()
+
+setInterval(() => {
+    timeFunc()
+}, 60000);
+
+
+// elHeaderTime.textContent = newdata.toLocaleTimeString()
+
 
 elBtnWeek.forEach(item =>{
     item.addEventListener("click", ()=>{
@@ -77,18 +103,64 @@ async function mainFuncDay(url) {
     }
 }
 
+let mns = new Date()
+let hours = mns.getHours();
+let menut = mns.getMinutes();
+if(hours < 10){
+    hours = "0" + hours 
+}
+if(menut < 10){
+    menut = "0" + menut 
+}
+hourMinut  =`${hours}:${menut}`
+
+// console.log(hourMinut);
+
+
+
 function renderFuncDay(arrs) {
     elList.innerHTML = "";
     const tempClone = templatePrayer.cloneNode(true);
     elPrayerTitle.textContent = arrs.region;
     elPrayerTime.textContent = `${data} ${moth} ${year}  yil`;
     elPrayerWeekday.textContent = `${day}`;
+    // Bomdod 
     tempClone.querySelector(".time-prayer-morning").textContent = arrs.times.tong_saharlik;
+    if(arrs.times.tong_saharlik <= hourMinut){
+        tempClone.querySelector(".item-night").style.backgroundColor = "#fff";
+        tempClone.querySelector(".item-morning").style.backgroundColor = "#00d451";
+    }
+    // Quyosh 
     tempClone.querySelector(".time-prayer-sunrise").textContent = arrs.times.quyosh;
+    if(arrs.times.quyosh <= hourMinut){
+        tempClone.querySelector(".item-morning").style.backgroundColor = "#fff";
+        tempClone.querySelector(".item-sunrise").style.backgroundColor = "#00d451";
+    }
+    // Peshin 
     tempClone.querySelector(".time-prayer-noon").textContent = arrs.times.peshin;
+    if(arrs.times.peshin <= hourMinut){
+        tempClone.querySelector(".item-sunrise").style.backgroundColor = "#fff";
+        tempClone.querySelector(".item-noon").style.backgroundColor = "#00d451";
+    }
+    // Asr 
     tempClone.querySelector(".time-prayer-century").textContent = arrs.times.asr;
+    if(arrs.times.asr <= hourMinut){
+        tempClone.querySelector(".item-noon").style.backgroundColor = "#fff";
+        tempClone.querySelector(".item-century").style.backgroundColor = "#00d451";
+    }
+    // Shom 
     tempClone.querySelector(".time-prayer-evening").textContent = arrs.times.shom_iftor;
+    if(arrs.times.shom_iftor <= hourMinut){
+        tempClone.querySelector(".item-century").style.backgroundColor = "#fff";
+        tempClone.querySelector(".item-evening").style.backgroundColor = "#00d451";
+    }
+    // Xufton
     tempClone.querySelector(".time-prayer-night").textContent = arrs.times.hufton;
+    if(arrs.times.hufton <= hourMinut){
+        tempClone.querySelector(".item-evening").style.backgroundColor = "#fff";
+        tempClone.querySelector(".item-night").style.backgroundColor = "#00d451";
+    }
+    
     frag.appendChild(tempClone);
     elList.appendChild(frag);
 };
