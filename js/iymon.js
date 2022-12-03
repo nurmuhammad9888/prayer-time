@@ -18,3 +18,13 @@ timeFunc()
 setInterval(() => {
     timeFunc()
 }, 10000);
+
+window.addEventListener("DOMContentLoaded", () =>{
+    const loder = document.querySelector(".loder")
+    setTimeout(() =>{
+        loder.style.opacity = '0'
+        setTimeout(() =>{
+            loder.style.display = 'none'
+        }, 50)
+    }, 50)
+})

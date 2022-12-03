@@ -11,6 +11,16 @@ const elPrayerTitle = document.querySelector(".title-region");
 const elPrayerTime = document.querySelector(".time-date");
 const elPrayerWeekday = document.querySelector(".weekday");
 
+window.addEventListener("DOMContentLoaded", () =>{
+    const loder = document.querySelector(".loder")
+    setTimeout(() =>{
+        loder.style.opacity = '0'
+        setTimeout(() =>{
+            loder.style.display = 'none'
+        }, 50)
+    }, 50)
+})
+
 // BTN 
 const elBtnWeek = document.querySelectorAll(".btn-prayer");
 const elBtnCity = document.querySelectorAll(".btn-city");
@@ -57,9 +67,7 @@ setInterval(() => {
     timeFunc()
 }, 10000);
 
-console.log("hello");
 // elHeaderTime.textContent = newdata.toLocaleTimeString()
-
 
 elBtnWeek.forEach(item =>{
     item.addEventListener("click", ()=>{
@@ -108,7 +116,7 @@ async function mainFuncDay(url) {
     }
 }
 
-let mns = new Date()
+let mns = new Date();
 let hours = mns.getHours();
 let menut = mns.getMinutes();
 if(hours < 10){
@@ -118,23 +126,23 @@ if(menut < 10){
     menut = "0" + menut
 }
 hourMinut  = `${hours}:${menut}`
-// console.log(hourMinut);
+console.log(hourMinut);
 
 
 function renderFuncDay(arrs ) {
-    
     elList.innerHTML = "";
     const tempClone = templatePrayer.cloneNode(true);
     elPrayerTitle.textContent = arrs.region;
     elPrayerTime.textContent = `${data} ${moth} ${year}  yil`;
     elPrayerWeekday.textContent = `${day}`;
     
-    // Bomdod 
-    tempClone.querySelector(".time-prayer-morning").textContent = arrs.times.tong_saharlik;
-    if(arrs.times.tong_saharlik <= hourMinut){
-        tempClone.querySelector(".item-night").style.backgroundColor = "#fff";
-        tempClone.querySelector(".item-morning").style.backgroundColor = "#00d451";
-    }
+    // Bomdod
+    tempClone.querySelector(".time-prayer-morning").textContent = arrs.times.tong_saharlik;       
+        if(arrs.times.tong_saharlik <= hourMinut){
+            tempClone.querySelector(".item-night").style.backgroundColor = "#fff";
+            tempClone.querySelector(".item-morning").style.backgroundColor = "#00d451";
+        }
+
     // Quyosh
     tempClone.querySelector(".time-prayer-sunrise").textContent = arrs.times.quyosh;
     if(arrs.times.quyosh <= hourMinut){

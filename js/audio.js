@@ -5,7 +5,7 @@ const audiosWrapper = document.querySelector(".wrapper-fixsid");
 const btnAudioClose = document.querySelector(".btn-audio-close");
 const bodyHiddin = document.querySelector("body");
 const elHeaderTime = document.querySelector(".header-time");
-// const btnAudioPlay = document.querySelector(".btn-audio-play");
+const btnTop = document.querySelector(".btn-top");
 const btnAudio = document.querySelector(".audio-m");
 const elLoder = document.querySelector(".loder");
 
@@ -14,6 +14,16 @@ const frag = document.createDocumentFragment();
 const audioTemplate = document.querySelector(".audio-template").content;
 const viewAudioTemplate = document.querySelector(".view-audio-template").content;
 
+
+window.addEventListener("DOMContentLoaded", () =>{
+    const loder = document.querySelector(".loder")
+    setTimeout(() =>{
+        loder.style.opacity = '0'
+        setTimeout(() =>{
+            loder.style.display = 'none'
+        }, 50)
+    }, 50)
+})
 
 function timeFunc() {
     let mns = new Date();
@@ -63,6 +73,7 @@ function rendrerAudioView(arr){
 
 viewAudioList.addEventListener("click" , evt =>{
     audioList.innerHTML = '';
+    btnTop.classList.add("d-none")
     if(evt.target.matches(".btn-view-audio")){
         const btnId = evt.target.dataset.id;
         audiosWrapper.classList.add("audios-wrapper-show");
@@ -77,6 +88,7 @@ viewAudioList.addEventListener("click" , evt =>{
 btnAudioClose.addEventListener("click", () =>{
     audiosWrapper.classList.remove("audios-wrapper-show")
     bodyHiddin.classList.remove("body-show")
+    btnTop.classList.remove("d-none")
 })
 
 async function audioFunc(url){
