@@ -16,10 +16,51 @@
     url('../fonts/athiti-v12-latin-600.woff2') format('woff2'), 
     url('../fonts/athiti-v12-latin-600.woff') format('woff');
 }
-
 body{
     background-color: #e0e0e6;
     font-family: 'Athiti', sans-serif;
+    box-sizing: border-box;
+}
+.body-show{
+    overflow: hidden;
+}
+.site-header{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.hero-iymon-title-wrap{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.logo a{
+    font-size: 18px;
+}
+.navbar-nav-item{
+    padding: 5px;
+    margin-top: 15px;
+    background-color: #d0d6cecb;
+}
+
+.res-navbar-link{
+    color: #080000;
+}
+.header-time{
+    font-size: 14px;
+    color: #030702;
+}
+.header-titile-time{
+    font-size: 14px;
+    color: #070c04;
+}
+.navbar-toggler{
+    padding: 5px;
+}
+.navbar-toggler-icon{
+    font-size: 15px;
+}
+.nav-list{
+    display: flex;
 }
 .item{
     width: 100%;
@@ -76,16 +117,90 @@ body{
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 
-.header-time{
-    font-size: 15px;
+.wrapper-fixsid{
+    position: fixed;
+    background-color: #555555;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
 }
-.header-titile-time{
-    font-size: 15px;
+.prayer-text-list{
+    border-radius: 10px;
+    padding: 30px 10px 20px 10px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
+
+/* AUDIO STYl  */
+.audios-wrapper-show{
+    display: block;
+}
+.view-audio-list{
+    width: 100%;
+}
+.view-audio-text{
+    text-transform: capitalize;
+}
+/* .audio-link{
+    text-align: center;
+    margin-top: 30px;
+    width: 180px;
+    height: 100px;
+    background-color: #FCFCFD;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    background-image: url("../images/quran-imagess.png");
+    background-position: calc(50%) calc(50% + 15px);
+    background-size: 80px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    display: inline-block;
+} */
+.audio-prayer-time{
+    background-image: url("../images/time-img.png");
+}
+.view-audio-item{
+    width: 100%;
+    max-width: 360px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+.view-audio-ordinal-number{
+    font-size: 30px;
+}
+.audio-m{
+    /* visibility: hidden; */
+}
+
+
+/* FATH  */
+.faith-blok{
+    border-radius: 4px;
+    background-color: #FCFCFD;
+}
+.faith-item{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.faith-content{
+    font-size: 16px;
+    line-height: px;
+}
+.btn-menu-wrap{
+    display: flex;
+}
+
+
 /* MEDIA QUERY  */
 @media only screen and (min-width:768px){
     .table{
         font-size: 16px;
+    }
+    .logo a{
+        font-size: 24px;
     }
     .week-rotaete{
         writing-mode: horizontal-tb;
@@ -105,9 +220,29 @@ body{
         background-size: 20px;
     }
     .header-time{
-        font-size: 23px;
+        font-size: 17px;
     }
     .header-titile-time{
-        font-size: 23px;
+        font-size: 17px;
+    }
+    .faith-blok{
+        padding: 20px;
+    }
+    .faith-item{
+        font-size: 28px;
+        font-weight: bold;
+    }
+}
+
+@media only screen and (min-width:990px){
+    .nav-list{
+        margin-left: 50px;
+    }
+    .navbar-nav{
+        margin-left: 55px;
+    }
+    .navbar-nav-item{
+        margin-top: 0px;
+        background-color: transparent;
     }
 }

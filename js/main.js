@@ -27,10 +27,16 @@ let data = newdata.getDate();
 let moth = moths[newdata.getMonth()];
 let year = newdata.getFullYear();
 let mon = newdata.getMonth()
+if(data < 10){
+    data = data ? "0" + data : data
+}
+if(mon < 10){
+    mon = mon ? "0" + mon : mon
+}
 let presentTime = `${data}.${mon + 1}.${year}`
 let monthTime = `${year}-${mon + 1}-${data}`
 
-
+console.log(presentTime);
 function timeFunc() {
     let mns = new Date();
     let hours = mns.getHours();
@@ -44,7 +50,6 @@ function timeFunc() {
     let hourMinut = `${hours}:${menut}`
     // console.log(hourMinut);
     elHeaderTime.textContent = hourMinut;
-    
 }
 timeFunc()
 
@@ -52,7 +57,7 @@ setInterval(() => {
     timeFunc()
 }, 10000);
 
-
+console.log("hello");
 // elHeaderTime.textContent = newdata.toLocaleTimeString()
 
 
@@ -107,30 +112,30 @@ let mns = new Date()
 let hours = mns.getHours();
 let menut = mns.getMinutes();
 if(hours < 10){
-    hours = "0" + hours 
+    hours = "0" + hours
 }
 if(menut < 10){
-    menut = "0" + menut 
+    menut = "0" + menut
 }
-hourMinut  =`${hours}:${menut}`
-
+hourMinut  = `${hours}:${menut}`
 // console.log(hourMinut);
 
 
-
-function renderFuncDay(arrs) {
+function renderFuncDay(arrs ) {
+    
     elList.innerHTML = "";
     const tempClone = templatePrayer.cloneNode(true);
     elPrayerTitle.textContent = arrs.region;
     elPrayerTime.textContent = `${data} ${moth} ${year}  yil`;
     elPrayerWeekday.textContent = `${day}`;
+    
     // Bomdod 
     tempClone.querySelector(".time-prayer-morning").textContent = arrs.times.tong_saharlik;
     if(arrs.times.tong_saharlik <= hourMinut){
         tempClone.querySelector(".item-night").style.backgroundColor = "#fff";
         tempClone.querySelector(".item-morning").style.backgroundColor = "#00d451";
     }
-    // Quyosh 
+    // Quyosh
     tempClone.querySelector(".time-prayer-sunrise").textContent = arrs.times.quyosh;
     if(arrs.times.quyosh <= hourMinut){
         tempClone.querySelector(".item-morning").style.backgroundColor = "#fff";
@@ -184,7 +189,6 @@ function renderFuncWeek(arr) {
         const tempClone = templatePrayerTebl.cloneNode(true);
         let dat =  tempClone.querySelector(".week-time-text").textContent = el.date.slice(0, 10).split("/").join(".");
         tempClone.querySelector(".week-t-text").textContent = el.weekday;
-        
         if(el.weekday == "Juma"){
             tempClone.querySelector(".table-tr").style.backgroundColor = "#14dd2f";
             tempClone.querySelector(".table-tr").style.color = "#fff";
@@ -205,3 +209,4 @@ function renderFuncWeek(arr) {
     });
     elListTebl.appendChild(frag);
 }
+

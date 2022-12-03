@@ -11,13 +11,24 @@
 </head>
 <body>
     <section class="hero">
-        <header class="site-header bg-white">
+        <!-- <header class="site-header bg-white">
             <div class="container px-3 px-md-0">
                 <nav class="p-3 d-flex justify-content-between align-items-center">
-                    <div class="logo">
-                        <a class="text-decoration-none fs-4 fw-bold" href="index.html">Namoz vaqtlari</a>
-                    </div>
-                    <ul class="nav-list list-unstyled mb-0">
+                    <ul class="list-unstyled d-flex mb-0">
+                        <li class="logo">
+                            <a class="text-decoration-none fs-4 fw-bold" href="index.html">Namoz vaqtlari</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center ms-4">
+                            <a class="text-decoration-none navbar-link" href="./audio.html">Qur'oni karim</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center ms-4">
+                            <a class="text-decoration-none navbar-link" href="./iymon.html">Iymon</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center ms-4">
+                            <a class="text-decoration-none navbar-link" href="./index.html">Namoz vaqtlari</a>
+                        </li>
+                    </ul>
+                    <ul class="nav-list list-unstyled mb-0 d-flex">
                         <li class="nav-item d-flex align-items-center">
                             <strong class="header-titile-time">Joriy vaqt</strong>
                             <h5 class="mb-0 ms-2 fw-bold header-time">12:08</h5>
@@ -25,8 +36,49 @@
                     </ul>
                 </nav>
             </div>
+        </header> -->
+        <header class="site-header bg-white">
+            <div class="container px-3 px-md-0">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <div class="logo">
+                            <a class="text-decoration-none fw-bold" href="index.html">Namoz vaqtlari</a>
+                        </div>
+                        <ul class="nav-list list-unstyled mb-0">
+                            <li class="nav-item d-flex align-items-center">
+                                <strong class="header-titile-time">Joriy vaqt</strong>
+                                <h5 class="mb-0 ms-2 mt-1 fw-bold header-time">12:08</h5>
+                            </li>
+                        </ul>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <ul class="navbar-nav list-unstyled">
+                                <li class="navbar-nav-item">
+                                    <a class="text-decoration-none res-navbar-link nav-link" href="./audio.html">Qur'oni karim</a>
+                                </li>
+                                <li class="navbar-nav-item">
+                                    <a class="text-decoration-none res-navbar-link nav-link" href="./iymon.html">Iymon</a>
+                                </li>
+                                <li class="navbar-nav-item">
+                                    <a class="text-decoration-none res-navbar-link nav-link" href="./index.html">Namoz vaqtlari</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
         </header>
         <div class="container px-3 px-md-0">
+            <!-- <div class="d-flex">
+                <div class="">
+                    <a class="text-decoration-none px-2 audio-link text-black fs-4" href="./audio.html">Qur'oni karim</a>
+                </div>
+                <div class="ms-4">
+                    <a class="text-decoration-none px-2 audio-link text-black fs-4" href="./iymon.html">Iymon</a>
+                </div>
+            </div> -->
             <div class="title-wrap my-5">
                 <div class="title-content-wrap rounded p-3">
                     <h3 class="title-region text-center fw-semibold"></h3>
@@ -86,6 +138,67 @@
                     </tbody>
                 </table>
             </div>
+            <!-- <div class="view-audio-wrapper">
+                <h2 class="text-center">Qur'oni Karim</h2>
+                <ul class="view-audio-list list-unstyled row justify-content-around">
+                    
+                </ul>
+            </div> -->
+        </div>
+        <!-- <div class="wrapper-fixsid px-3">
+            <div class="btn-title-wrap mt-5 d-flex justify-content-between align-items-center">
+                <h4 class="text-center fs-2 text-white audio-text-title">Al Fatiha</h4>
+                <button class="btn btn-audio-close btn-danger">X</button>
+            </div>
+            <ul class="audios-list list-unstyled px-3">
+                <li class="audios-item">
+                    <h4 class="audio-title text-white">1</h4>
+                    <p class="audio-text text-white">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ</p>
+                    <audio class="audio-m" controls src=""></audio>
+                </li>
+            </ul>
+        </div> -->
+    </section>
+    <section class="prayer-text">
+        <div class="container px-3 px-md-0">
+            <ul class="prayer-text-list list-unstyled row mx-1">
+                <li class="prayer-text-item col-12 col-md-6 col-lg-4">
+                    <h4 class="prayer-text-title fs-5 fw-bold">Bomdod namozi</h4>
+                    <p class="prayer-text-content">Subhi sodiqdan (chin tong otgandan) kun chiqqunchadir.
+                        Bomdod namozini tong yorishganda oʻqish mustahab, a‘loroqdir. Soat boʻyicha hisoblansa, bomdodni kun chiqishidan 40 daqiqacha ilgari oʻqish mustahab vaqtiga muvofiq boʻladi.
+                    </p>
+                </li>
+                <li class="prayer-text-item col-12 col-md-6 col-lg-4">
+                    <h4 class="prayer-text-title fs-5 fw-bold">Pеshin namozi</h4>
+                    <p class="prayer-text-content">Quyosh zavolga (ogʻishga) kеtganidan soʻng to narsalarning soyasi quyosh tikkaga kеlgan paytdagi so-yasidan tashqari oʻz uzunligiga nisbatan ikki baravar ortguniga qadar.
+                        Pеshin namozini yoz faslida biroz kеchiktirib, qish faslida esa vaqti kirishi bilan oʻqish mustahabdir.
+                    </p>
+                </li>
+                <li class="prayer-text-item col-12 col-md-6 col-lg-4">
+                    <h4 class="prayer-text-title fs-5 fw-bold">Asr namozi</h4>
+                    <p class="prayer-text-content">Har bir narsaning soyasi quyosh tikkaga kеlgan paytdagi soyasidan tashqari oʻziga nisbatan ikki baravar ortganidan boshlab quyosh botgunchadir.
+                        Asr namozini quyosh tigʻini oʻzgartirmay, nursiz holatga kiri-shidan oldinroq oʻqish mustahabdir.
+                    </p>
+                </li>
+                <li class="prayer-text-item col-12 col-md-6 col-lg-4">
+                    <h4 class="prayer-text-title fs-5 fw-bold">Shom namozi</h4>
+                    <p class="prayer-text-content">Kun botgan paytdan boshlab kunbotar tomonda shafaq (qizgʻish nurlar) gʻoyib boʻlgunchadir.
+                        Shom namozini doimo quyosh botishi bilan oʻqish mustahabdir.
+                    </p>
+                </li>
+                <li class="prayer-text-item col-12 col-md-6 col-lg-4">
+                    <h4 class="prayer-text-title fs-5 fw-bold">Xufton namozi</h4>
+                    <p class="prayer-text-content">Shafaq batamom yoʻqolgandan kеyin kiradi.
+                        Xufton namozini kеchaning uchdan birining oxirida oʻqish afzal va nihoyatda a‘lo boʻladi..
+                    </p>
+                </li>
+                <li class="prayer-text-item col-12 col-md-6 col-lg-4">
+                    <h4 class="prayer-text-title fs-5 fw-bold">Vitr namozi </h4>
+                    <p class="prayer-text-content">Xufton oʻqilgandan kеyingina kiradi. Xufton va vitr namozlarini subhi sodiqqacha oʻqisa boʻladi.
+                        Vitr namozini tun oxirida uygʻonishga qodir boʻlgan kishilar subh oldidan oʻqisalar, mustahab amal qilgan boʻlishadi.
+                    </p>
+                </li>
+            </ul>
         </div>
     </section>
     <template class="template-prayer">
@@ -149,6 +262,27 @@
             </td>
         </tr>
     </template>
+    <!-- <template class="view-audio-template">
+        <li class="view-audio-item col-5 my-4 bg-info p-2">
+            <div class="d-flex justify-content-between">
+                <h4 class="view-audio-title">Al-Faatiha</h4>
+                <p class="view-audio-name"></p>
+                <p class="view-audio-text">Meccan</p>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span class="view-audio-number">7</span>
+                <button class="btn btn-view-audio btn-warning">O'qish</button>
+            </div>
+        </li>
+    </template>
+    <template class="audio-template">
+        <li class="audios-item">
+            <h4 class="audio-title text-white"></h4>
+            <p class="audio-text text-white"></p>
+            <audio class="audio-m" controls src=""></audio>
+        </li>
+    </template> -->
+    <script src="//code.jivosite.com/widget/9BVrLQXcb6" async></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
 </body>
