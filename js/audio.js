@@ -9,11 +9,9 @@ const btnTop = document.querySelector(".btn-top");
 const btnAudio = document.querySelector(".audio-m");
 const elLoder = document.querySelector(".loder");
 
-
 const frag = document.createDocumentFragment();
 const audioTemplate = document.querySelector(".audio-template").content;
 const viewAudioTemplate = document.querySelector(".view-audio-template").content;
-
 
 window.addEventListener("DOMContentLoaded", () =>{
     const loder = document.querySelector(".loder")
@@ -36,7 +34,6 @@ function timeFunc() {
         menut = "0" + menut 
     }
     let hourMinut = `${hours}:${menut}`
-    // console.log(hourMinut);
     elHeaderTime.textContent = hourMinut;
 }
 timeFunc()
@@ -44,7 +41,6 @@ timeFunc()
 setInterval(() => {
     timeFunc()
 }, 10000);
-
 
 async function viewAudioFunc(){
     try {
@@ -56,7 +52,6 @@ async function viewAudioFunc(){
     }
 }
 viewAudioFunc();
-console.log("hello");
 
 function rendrerAudioView(arr){
     arr.forEach(el =>{
@@ -102,7 +97,6 @@ async function audioFunc(url){
     }
 }
 
-
 function rendrerAudio(arr){
     audioList.innerHTML = '';
     elLoder.innerHTML = "";
@@ -116,7 +110,3 @@ function rendrerAudio(arr){
     })
     audioList.appendChild(frag)
 }
-
-// btnAudioPlay.addEventListener("click", evt =>{
-    
-// })

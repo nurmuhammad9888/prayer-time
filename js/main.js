@@ -37,16 +37,16 @@ let data = newdata.getDate();
 let moth = moths[newdata.getMonth()];
 let year = newdata.getFullYear();
 let mon = newdata.getMonth()
-if(data < 10){
-    data = data ? "0" + data : data
-}
-if(mon < 10){
-    mon = mon ? "0" + mon : mon
-}
-let presentTime = `${data}.${mon + 1}.${year}`
-let monthTime = `${year}-${mon + 1}-${data}`
 
-console.log(presentTime);
+if(mon < 9){
+    mon = "0" + (mon + 1)
+}else {
+    mon = mon + 1
+}
+
+let presentTime = `${data}.${mon}.${year}`
+let monthTime = `${year}-${mon}-${data}`
+
 function timeFunc() {
     let mns = new Date();
     let hours = mns.getHours();
@@ -58,7 +58,6 @@ function timeFunc() {
         menut = "0" + menut 
     }
     let hourMinut = `${hours}:${menut}`
-    // console.log(hourMinut);
     elHeaderTime.textContent = hourMinut;
 }
 timeFunc()
@@ -66,8 +65,6 @@ timeFunc()
 setInterval(() => {
     timeFunc()
 }, 10000);
-
-// elHeaderTime.textContent = newdata.toLocaleTimeString()
 
 elBtnWeek.forEach(item =>{
     item.addEventListener("click", ()=>{
@@ -126,8 +123,6 @@ if(menut < 10){
     menut = "0" + menut
 }
 hourMinut  = `${hours}:${menut}`
-console.log(hourMinut);
-
 
 function renderFuncDay(arrs ) {
     elList.innerHTML = "";
@@ -187,7 +182,6 @@ async function mainFuncWeekMonth(url) {
         console.log(error);
     }
 }
-
 
 function renderFuncWeek(arr) {
     elList.innerHTML = "";
