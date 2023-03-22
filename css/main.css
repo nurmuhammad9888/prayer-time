@@ -241,6 +241,23 @@ body{
 .btn-menu-wrap{
     display: flex;
 }
+.ramadan-bg{
+    background-color: #f3f3f7;
+}
+.ramadan-bg-active{
+    background-color: #14dd2f;
+}
+.ramadan-bg-active .time-prayer-morning{
+    background-color: rgb(23, 8, 240);
+    padding: 5px;
+    border-radius: 5px;
+}
+.ramadan-bg-active .time-prayer-sunrise{
+    background-color: rgb(9, 7, 29);
+    padding: 5px;
+    border-radius: 5px;
+}
+
 
 /* MEDIA QUERY  */
 @media only screen and (min-width:768px){
